@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+#folders
+dep/Tonic/
+dep/json/
+dep/wxInclude/
+winlib/
+.vs/
+#other files
+.sconsign.dblite
