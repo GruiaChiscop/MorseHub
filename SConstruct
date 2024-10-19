@@ -1,11 +1,10 @@
 import os
-
 env = Environment()
 env.Decider('content-timestamp')
 
 if env["PLATFORM"] == "win32":
     env.Append(CCFLAGS = ["/EHsc", "/J", "/MD", "/Z7", "/std:c++20", "/GF", "/Zc:inline", "/O2", "/bigobj", "/permissive-", "/D_CRT_SECURE_NO_WARNINGS"])
-    env.Append(LIBS = ["kernel32", "user32", "gdi32", "comdlg32", "winspool", "shell32", "shlwapi", "ole32", "oleaut32", "uuid", "advapi32", "version", "comctl32", "rpcrt4", "ws2_32", "wininet", "winmm", "wxbase32u", "wxmsw32u_core"])
+    env.Append(LIBS = ["kernel32", "user32", "gdi32", "comdlg32", "winspool", "shell32", "shlwapi", "ole32", "oleaut32", "uuid", "advapi32", "version", "comctl32", "rpcrt4", "ws2_32", "wininet", "winmm", "wxbase32u", "wxmsw32u_core", "Toniclib"])
     env.Append(LIBPATH = ["winlib"])
     env.Append(CPPPATH = ["winlib/mswu", "winlib/mswu/wx", "dep/wxInclude/msvc", "dep/wxInclude/msvc/wx"])
     env.Append(CPPDEFINES =["WXUSINGDLL"])
@@ -14,11 +13,11 @@ env.Append(CPPPATH = ["dep/Tonic/src", "dep/json/single_include", "dep/wxInclude
 
 sources = Glob("*.cpp")
 cfiles = Glob("*.c")
-#objects = env.Object(target=["build/objects/" + os.path.basename(str(source)).replace('.cpp', '.obj').replace('.c', '.obj') for source in sources + cfiles], source=sources + cfiles)
-#env.Program("MorseHub", objects)
 objects = []
 for source in sources + cfiles:
     obj = env.Object(target="build/objects/" + os.path.basename(str(source)).replace('.cpp', '.obj').replace('.c', '.obj'), source=source)
     objects.append(obj)
+#we cannot build the program yet, since we need the Tonic and Json built as well
+
 env.Program(target="bin/MorseHub", source=objects)
 env.Program(target="bin/MorseHub", source=objects)
