@@ -87,6 +87,7 @@ sizer->Add(testButton, 0, wxALL | wxCENTER, 10);
 		sizer->Add(finishButton, 0, wxALL | wxCENTER, 10);
 		this->Bind(wxEVT_CLOSE_WINDOW, &WelcomeWindow::OnClose, this);
 		testButton->Bind(wxEVT_BUTTON, &WelcomeWindow::OnTest, this);
+		
 		SetSizer(sizer);
 		sizer->Fit(this);
 	}
