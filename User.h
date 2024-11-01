@@ -15,7 +15,7 @@ public:
 	User()
 	{
 		name = "";
-		callsign = "";
+		callsign = "none";
 		dateOfBirth = wxDateTime::Now();
 		defaultSpeed = 20;
 		defaultPitch = 440;

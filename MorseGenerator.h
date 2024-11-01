@@ -3,14 +3,12 @@
 */
 #ifndef MORSEGENERATOR_H
 #define MORSEGENERATOR_H
-#include "Synth.h"
 #include "miniaudio.h" //for audio output
 #include "SignalGenerator.h"
 #include <string>
 #include <fstream>
 #include <vector>
 #include <map>
-#include <future>
 #include <windows.h>
 class MorseGenerator
 {
@@ -33,7 +31,6 @@ class MorseGenerator
     private:
     std::vector<float> outputBuffer;
     SignalType m_signalType = SignalType_Sine;
-Synth synth;
 Generator gen;
 int m_speed;
 int m_frequency;
@@ -52,7 +49,6 @@ void addWord(const std::string& word);
 //callback
 static void data_callback(ma_device* pDevice, void* pOutput, const void* pInput, ma_uint32 frameCount) {
     MorseGenerator* self = static_cast<MorseGenerator*>(pDevice->pUserData);
-    
 float* output = (float*)pOutput;
 for(ma_uint32 i=0; i<frameCount; ++i) {
     if(pos<self->outputBuffer.size()) output[i] = self->outputBuffer[pos++];
