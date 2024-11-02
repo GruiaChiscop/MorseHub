@@ -37,5 +37,5 @@ void WelcomeWindow::onFinish(wxEvent& event)
 		wxMessageBox("Either name or callsign field is empty. If you do not have a callsign, just type none", "Name or callsign not found");
 		return;
 	}
-	//updateUser();
+	updateUser();
 }

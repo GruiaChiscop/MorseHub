@@ -9,7 +9,6 @@
 #include <fstream>
 #include <vector>
 #include <map>
-#include <windows.h>
 class MorseGenerator
 {
     public:

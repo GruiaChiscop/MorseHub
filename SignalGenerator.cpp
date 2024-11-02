@@ -1,5 +1,4 @@
 #include "SignalGenerator.h"
-#include <windows.h>
 #include <string>
 using namespace std;
 Generator::Generator(float freq, int samplerate) : frequency{freq}, sampleRate{samplerate} {}

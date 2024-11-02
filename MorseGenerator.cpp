@@ -1,6 +1,5 @@
 #define MINIAUDIO_IMPLEMENTATION
 #include "miniaudio.h"
-#include <windows.h>
 #include "MorseGenerator.h"
 #include "Utilities.h"
 #include <vector>
