@@ -33,5 +33,6 @@
 #folders
 winlib/
 .vs/
+.vscode./
 #other files
 .sconsign.dblite

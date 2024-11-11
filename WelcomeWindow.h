@@ -9,6 +9,7 @@
 #include <wx/sizer.h>
 #include <wx/dynarray.h>
 #include <wx/msgdlg.h>
+
 #include "User.h"
 
 class WelcomeWindow : public wxDialog
@@ -26,7 +27,6 @@ public:
 		user = u;
 
 		wxBoxSizer* sizer = new wxBoxSizer(wxVERTICAL);
-
 		wxStaticText* welcomeLabel = new wxStaticText(this, wxID_ANY, "Let's get started by setting up your profile");
 		sizer->Add(welcomeLabel, 0, wxALL | wxCENTER, 10);
 

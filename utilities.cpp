@@ -6,11 +6,11 @@
 #include <vector>
 
 using namespace std;
-std::vector<std::string> stringSplit(const std::string& str, char delim) {
-    std::stringstream sstream(str);
-    std::string token;
-    std::vector<std::string> tokens;
-    while(std::getline(sstream, token, delim)) tokens.push_back(token);
+vector<string> stringSplit(const string& str, char delim) {
+    stringstream sstream(str);
+    string token;
+    vector<std::string> tokens;
+    while(getline(sstream, token, delim)) tokens.push_back(token);
     return tokens;
 }
 string toUpper(const string& str) {
@@ -37,7 +37,7 @@ string reversedString(const string& str) {
 bool randomBool() {
     return rand()%2 == 0;
 }
-long long randominteger(long long min, long long max) {
+long long randomInteger(long long min, long long max) {
     srand(time(NULL));
     return min+(rand())%max+1;
 }
