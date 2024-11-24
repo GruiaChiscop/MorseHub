@@ -44,12 +44,14 @@ menubar->Append(fileMenu, "&Proffile");
 menubar->Append(optionsMenu, "&Options");
 menubar->Append(helpMenu, "&Help");
 SetMenuBar(menubar);
+wxPanel* panel = new wxPanel(this);
 wxBoxSizer* sizer = new wxBoxSizer(wxHORIZONTAL);
-wxStaticText* mainPageLabel = new wxStaticText(this, wxID_ANY, "MorseHub start");
+wxStaticText* mainPageLabel = new wxStaticText(panel, wxID_ANY, "MorseHub start");
 sizer->Add(mainPageLabel, 0, wxALL, 5);
- wxButton* startBTN = new wxButton(this, wxID_ANY, "Start");
+ wxButton* startBTN = new wxButton(panel, wxID_ANY, "Start");
  sizer->Add(startBTN, 0, wxALL | wxCenter, 10);
- wxButton* exitBTN = new wxButton(this, wxID_ANY, "Exit");
+ wxButton* exitBTN = new wxButton(panel, wxID_ANY, "Exit");
+ sizer->Add(exitBTN, 0, wxALL | wxCenter, 10);
 }
 };
 #endif

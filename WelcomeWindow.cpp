@@ -1,5 +1,6 @@
 #include "WelcomeWindow.h"
 #include "MorseGenerator.h"
+#include "MainWindow.h"
 #include <string>
 #include "User.h"
 #include <memory>
@@ -50,5 +51,9 @@ void WelcomeWindow::onFinish(wxEvent& event)
 		wxMessageBox("Either name or callsign field is empty. If you do not have a callsign, just type none", "Name or callsign not found");
 		return;
 	}
+	MainFrame* f = new MainFrame(user);
+	f->Show();
 	updateUser();
+
+
 }
