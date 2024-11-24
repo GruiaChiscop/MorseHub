@@ -9,7 +9,7 @@
 #include <stdexcept>
 #include <chrono>
 size_t MorseGenerator::pos = 0;
-MorseGenerator::MorseGenerator(int speed, int pitch, SignalType type) : m_frequency {pitch}, m_speed{speed}, m_signalType{type} {
+MorseGenerator::MorseGenerator(int speed, float pitch, SignalType type) : m_frequency {pitch}, m_speed{speed}, m_signalType{type}, gen { pitch, 44100, static_cast<SType>(type)} {
 deviceConfig = ma_device_config_init(ma_device_type_playback);
 deviceConfig.playback.format = ma_format_f32;
 deviceConfig.playback.channels = 1;
@@ -18,8 +18,7 @@ deviceConfig.dataCallback = data_callback;
     deviceConfig.pUserData = this;
     if(ma_device_init(nullptr, &deviceConfig, &device)!=MA_SUCCESS) {
         throw std::runtime_error("Failed to initialize the device");
-        delete this;
-        return;
+                return;
     }
 }
 
@@ -45,8 +44,8 @@ void MorseGenerator::outputToFile(const std::string& file, const std::string& te
 void MorseGenerator::addCharacter(char c) {
     if(characters.count(c)) {
         for(char ch: characters.at(c)) {
-            if(ch=='-') gen.addSawtoothWave(dashLength(), outputBuffer);
-            else if(ch=='.') gen.addSawtoothWave(unitLength(), outputBuffer);
+            if(ch=='-') gen.add(dashLength(), outputBuffer);
+            else if(ch=='.') gen.add(unitLength(), outputBuffer);
             gen.addSilence(unitLength(), outputBuffer);
         }
     }

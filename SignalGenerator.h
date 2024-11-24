@@ -9,20 +9,26 @@
 #include <cmath>
 #include <vector>
 #include <functional>
+enum SType {
+    Sine, Square, Triangle, Sawtooth
+};
+
 class Generator {
 const float a = 0.5;
 const double pi = 3.14159265358979323846;
+SType type;
 std::vector<float> buffer;
 public:
 float frequency;
 int sampleRate;
-Generator(float freq= 440.0f, int samplerate = 44100);
+Generator(float freq= 440.0f, int samplerate = 44100, SType t = Sine);
 ~Generator();
 void add(float duration, std::function<double(int sampleIndex)> waveformFormula, std::vector<float>& buffer);
 void addSquareWave(float duration, std::vector<float>& buffer);
 void addSineWave(float duration, std::vector<float>& buffer);
 void addTriangleWave(float duration, std::vector<float>& buffer);
 void addSawtoothWave(float duration, std::vector<float>& buffer);
+void add(float duration, std::vector<float>& buffer);
 void addSilence(float duration, std::vector<float>& buffer);
 std::vector<float>& getBuffer() { return buffer; }
 void reset();

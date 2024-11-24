@@ -8,7 +8,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
-#include <map>
+#include <unordered_map>
 class MorseGenerator
 {
     public:
@@ -19,8 +19,8 @@ class MorseGenerator
         SignalType_Triangle = ma_waveform_type_triangle,
         SignalType_sawtooth = ma_waveform_type_sawtooth
     };
-    inline static const std::map<char, std::string> characters { {'a', ".-"}, {'b', "-..."}, {'c', "-.-."}, {'d', "-.."}, {'e', "."}, {'f', "..-."}, {'g', "--."}, {'h', "...."}, {'i', ".."}, {'j', ".---"}, {'k', "-.-"}, {'l', ".-.."}, {'m', "--"}, {'n', "-."}, {'o', "---"}, {'p', ".--."}, {'q', "--.-"}, {'r', "..."}, {'t', "-"}, {'u', "..-"}, {'v', "...-"}, {'w', ".--"}, {'x', "-..-"}, {'y', "-.--"}, {'z', "--.."}, {'1', ".----"}, {'2', "..---"}, {'3', "...--"}, {'4', "....-"}, {'5', "....."}, {'6', "-...."}, {'7', "--..."}, {'8', "---.."}, {'9', "----."}, {'0', "-----"}, {'?', "..--.."}, {'.', ".-.-.-"}, {'/', "-..-."}, {',', "--..--"}, {'=', "-...-"}, {'+', ".-.-."}};
-    MorseGenerator(int speed = 20, int pitch = 440, SignalType type = SignalType_Sine);
+    inline static const std::unordered_map<char, std::string> characters { {'a', ".-"}, {'b', "-..."}, {'c', "-.-."}, {'d', "-.."}, {'e', "."}, {'f', "..-."}, {'g', "--."}, {'h', "...."}, {'i', ".."}, {'j', ".---"}, {'k', "-.-"}, {'l', ".-.."}, {'m', "--"}, {'n', "-."}, {'o', "---"}, {'p', ".--."}, {'q', "--.-"}, {'r', "..."}, {'t', "-"}, {'u', "..-"}, {'v', "...-"}, {'w', ".--"}, {'x', "-..-"}, {'y', "-.--"}, {'z', "--.."}, {'1', ".----"}, {'2', "..---"}, {'3', "...--"}, {'4', "....-"}, {'5', "....."}, {'6', "-...."}, {'7', "--..."}, {'8', "---.."}, {'9', "----."}, {'0', "-----"}, {'?', "..--.."}, {'.', ".-.-.-"}, {'/', "-..-."}, {',', "--..--"}, {'=', "-...-"}, {'+', ".-.-."}};
+    MorseGenerator(int speed = 20, float pitch = 440.0f, SignalType type = SignalType_Sine);
     ~MorseGenerator();
     void transmit(const std::string& text);
     void transmitAsync(const std::string& text);
@@ -30,9 +30,9 @@ class MorseGenerator
     private:
     std::vector<float> outputBuffer;
     SignalType m_signalType = SignalType_Sine;
-Generator gen;
 int m_speed;
-int m_frequency;
+float m_frequency;
+Generator gen;
 ma_device device;
 ma_device_config deviceConfig;
 static size_t pos;

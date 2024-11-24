@@ -2,7 +2,6 @@
 #include "MorseGenerator.h"
 #include <string>
 #include "User.h"
-MorseGenerator gen;
 
 void WelcomeWindow::OnClose(wxCloseEvent& event)
 {
@@ -11,6 +10,17 @@ void WelcomeWindow::OnClose(wxCloseEvent& event)
 
 void WelcomeWindow::OnTest(wxEvent& event)
 {
+	int speed;
+	cbxSpeed->GetValue().ToInt(&speed);
+	int pitch;
+	cbxPitch->GetValue().ToInt(&pitch);
+	wxString signal = cbxSignalType->GetValue();
+	MorseGenerator::SignalType type;
+	if(signal=="Sine") type = MorseGenerator::SignalType_Sine;
+	else if(signal == "Square") type = MorseGenerator::SignalType_Square;
+	else if(signal == "Triangle") type = MorseGenerator::SignalType_Triangle;
+	else type = MorseGenerator::SignalType_sawtooth;
+	MorseGenerator gen(speed, pitch, type);
 		gen.transmitAsync("vvv");
 }
 
