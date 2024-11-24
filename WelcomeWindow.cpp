@@ -2,6 +2,9 @@
 #include "MorseGenerator.h"
 #include <string>
 #include "User.h"
+#include <memory>
+
+std::shared_ptr<MorseGenerator> gen = nullptr;
 
 void WelcomeWindow::OnClose(wxCloseEvent& event)
 {
@@ -20,8 +23,8 @@ void WelcomeWindow::OnTest(wxEvent& event)
 	else if(signal == "Square") type = MorseGenerator::SignalType_Square;
 	else if(signal == "Triangle") type = MorseGenerator::SignalType_Triangle;
 	else type = MorseGenerator::SignalType_sawtooth;
-	MorseGenerator gen(speed, pitch, type);
-		gen.transmitAsync("vvv");
+	gen = std::make_shared<MorseGenerator>(speed, pitch, type);
+		gen->transmitAsync("vvv");
 }
 
 void WelcomeWindow::updateUser()

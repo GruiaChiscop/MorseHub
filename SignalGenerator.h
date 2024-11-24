@@ -39,15 +39,22 @@ double sineWave(int sampleIndex) {
 }
 double squareWave(int sampleIndex) {
     double t = static_cast<double>(sampleIndex)/sampleRate;
-    return a*(std::sin(2.0*pi*frequency*t)>=0.0?1.0:-0.0);
+    return a*(std::sin(2.0*pi*frequency*t)>=0.0?1.0:-1.0);
 }
 double triangleWave(int sampleIndex) {
-    double t = static_cast<double>(sampleIndex)/sampleRate;
-    return a*(2.0*std::abs(2.0*(frequency*t-std::floor(0.+frequency*t)))-1.0);
+    double t = static_cast<double>(sampleIndex) / sampleRate; // Time step based on sample index
+    double phase = frequency * t;                            // Compute phase
+    double fractionalPart = phase - std::floor(phase);       // Fractional part of phase
+    double triangle = 2.0 * std::abs(2.0 * fractionalPart - 1.0) - 1.0; // Triangle wave calculation
+    return a * triangle;                                     // Scale by amplitude
 }
 double sawtoothWave(int sampleIndex) {
-    double t = static_cast<double>(sampleIndex)/sampleRate;
-    return a*(2.0*(frequency*t-std::floor(0.5+frequency*t)));
+    double t = static_cast<double>(sampleIndex) / sampleRate; // Time step based on sample index
+    double phase = frequency * t;                            // Compute phase
+    double fractionalPart = phase - std::floor(phase);       // Fractional part of phase
+    double sawtooth = 2.0 * fractionalPart - 1.0;            // Sawtooth wave calculation
+    return a * sawtooth;                                     // Scale by amplitude
 }
+
 };
 #endif
