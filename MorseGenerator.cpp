@@ -60,7 +60,7 @@ gen.addSilence(spaceBetweenWords(), outputBuffer);
 }
 
 void MorseGenerator::transmit(const std::string& text) {
-    std::vector<std::string> words = stringSplit(text, ' ');
+    std::vector<std::string> words = Utils::stringSplit(text, ' ');
     for(const std::string& word: words) addWord(word);
     
     gen.addSilence(spaceBetweenWords(), outputBuffer);

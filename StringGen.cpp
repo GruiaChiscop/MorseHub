@@ -5,7 +5,7 @@ std::string StringGen::generate(int num)
     std::ostringstream ss;
     for(int i=0; i<num; ++i)
     {
-        int randIndex = randomInteger(0, chars.length());
+        int randIndex = Utils::randomInteger(0, chars.length());
         ss<<chars[randIndex];
     }
     return ss.str();
@@ -20,7 +20,7 @@ std::string StringGen::generateOnlyDigits(int num)
     }
     for(int i=0; i<num; ++i)
     {
-        int randomIndex = randomInteger(0, digits.length());
+        int randomIndex = Utils::randomInteger(0, digits.length());
         ss<<digits[randomIndex];
     }
     return ss.str();
@@ -32,7 +32,7 @@ std::string StringGen::generateonlyLetters(int num)
     std::string letters = chars.substr(0, 26);
     for(int i=0; i<num; ++i)
     {
-        int randomindex = randomInteger(0, letters.size());
+        int randomindex = Utils::randomInteger(0, letters.size());
         ss<<letters[randomindex];
     }
     return ss.str();

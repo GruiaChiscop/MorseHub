@@ -3,9 +3,8 @@
 #include <wx/string.h>
 #include <string>
 #include "nlohmann/json.hpp"
-class User
+struct User
 {
-public:
 	std::string name;
 	std::string callsign;
 	wxDateTime dateOfBirth;
@@ -30,3 +29,5 @@ public:
 	}
 };
 
+void serialize(const User& user);
+User* deserialize();
