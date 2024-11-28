@@ -26,7 +26,7 @@ void MainFrame::OnModeChanged(wxEvent &event)
         menu->FindItem(ID_RUFZ)->Check(false);
         menu->FindItem(ID_RUNNER)->Check(false);
     }
-    else /*ID_JOINSERVER*/
+    else if(event.GetId() == ID_JOINSERVER)
     {
         //we uncheck everything if already checked, the client can become a server, or, if connected, it is instructed to do various things.
         menu->FindItem(ID_RUNNER)->Check(false);
@@ -49,7 +49,7 @@ void MainFrame::OnStart(wxEvent &event)
     {
         //m.ShowModal();
     }
-    else if(menu->FindItem(ID_PSRESTARTWINDOWS)->IsChecked())
+    else if(menu->FindItem(ID_RECEPTION)->IsChecked())
     {
         //rx.ShowModal();
     }
