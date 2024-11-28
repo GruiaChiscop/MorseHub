@@ -22,19 +22,19 @@ vector<string> stringSplit(const string& str, char delim) {
 }
 string toUpper(const string& str) {
     string ret = str;
-    std::transform(ret.begin(), ret.end(), ret.begin(), toupper);
+    std::transform(ret.begin(), ret.end(), ret.begin(), [](char c){return toupper(c);});
     return ret;
 }
 string toLower(const string& str) {
     string ret = str;
-    std::transform(ret.begin(), ret.end(), ret.begin(), tolower);
+    std::transform(ret.begin(), ret.end(), ret.begin(), [](char c){return tolower(c);});
     return ret; 
 }
 bool isUpper(const string& str) {
-    return all_of(str.begin(), str.end(), isupper);
+    return all_of(str.begin(), str.end(), [](char c){return isupper(c);});
 }
 bool isLower(const string& str) {
-    return all_of(str.begin(), str.end(), islower);
+    return all_of(str.begin(), str.end(), [](char c){return islower(c);});
 }
 string reversedString(const string& str) {
     string ret = str;

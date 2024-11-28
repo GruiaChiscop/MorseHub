@@ -4,5 +4,4 @@ class MorseHubApp : public wxApp
 {
 public:
 	virtual bool OnInit();
-
 };

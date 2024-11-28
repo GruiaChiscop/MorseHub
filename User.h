@@ -2,7 +2,7 @@
 #include <wx/datetime.h>
 #include <wx/string.h>
 #include <string>
-#include "nlohmann/json.hpp"
+#include "SignalGenerator.h"
 struct User
 {
 	std::string name;
@@ -10,7 +10,7 @@ struct User
 	wxDateTime dateOfBirth;
 	int defaultSpeed;
 	int defaultPitch;
-
+SType signalType;
 	User()
 	{
 		name = "";
@@ -18,6 +18,7 @@ struct User
 		dateOfBirth = wxDateTime::Now();
 		defaultSpeed = 20;
 		defaultPitch = 440;
+		signalType = Sine;
 	}
 	User(const std::string& name, const std::string& callsign)
 	{
@@ -26,8 +27,9 @@ struct User
 		dateOfBirth = wxDateTime::Now();
 		defaultSpeed = 20;
 		defaultPitch = 440;
+		signalType = Sine;
 	}
 };
 
 void serialize(const User& user);
-User* deserialize();
+void deserialize(User& user);

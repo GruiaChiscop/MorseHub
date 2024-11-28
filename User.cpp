@@ -1,7 +1,7 @@
 #include "User.h"
 #include "nlohmann/json.hpp"
 #include <fstream>
-
+#include <stdexcept>
 using nlohmann::json;
 //implemement the serialization logic for each struct
 //wxDateTime:
@@ -23,7 +23,7 @@ void from_json(const json& j, wxDateTime& dt)
 
 void to_json(json& j, const User& user)
 {
-    j = json{{"name", user.name}, {"callsign", user.callsign}, {"dateOfBirth", user.dateOfBirth}, {"defaultSpeed", user.defaultSpeed}, {"defaultPitch", user.defaultPitch}};
+    j = json{{"name", user.name}, {"callsign", user.callsign}, {"dateOfBirth", user.dateOfBirth}, {"defaultSpeed", user.defaultSpeed}, {"defaultPitch", user.defaultPitch}, {"signalType", static_cast<int>(user.signalType)}};
 }
 void from_json(const json& j, User& user)
 {
@@ -32,6 +32,7 @@ void from_json(const json& j, User& user)
     j.at("dateOfBirth").get_to(user.dateOfBirth);
     j.at("defaultSpeed").get_to(user.defaultSpeed);
     j.at("defaultPitch").get_to(user.defaultPitch);
+    user.signalType = static_cast<SType>(j.at("signalType").get<int>());
 }
 
 void serialize(const User& u)
@@ -43,13 +44,12 @@ f<<data.dump(4);
 f.close();
 }
 //this function returns nullptr if the file is invalid or it's missing
-User* deserialize()
+void deserialize(User& user)
 {
     std::ifstream f("User.json");
-    if(!f.is_open()) return nullptr;
+    if(!f.is_open()) throw std::runtime_error("Error in opening the file");
     json j;
     f>>j;
     f.close();
-    User u = j.get<User>();
-    return &u;
+    user = j.get<User>();
 }

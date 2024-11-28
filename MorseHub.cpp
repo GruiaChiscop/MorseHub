@@ -3,25 +3,29 @@
 #include "WelcomeWindow.h"
 #include "User.h"
 #include "MainWindow.h"
+#include "Utilities.h"
+#include <memory>
+
 bool MorseHubApp::OnInit()
 {
-	//the initialization logic will come here
 	User u;
+Utils::currentWD = Utils::getWD();
+Utils::appDataPath = Utils::getAppData();
 
-	User* loadedUser = deserialize();
-	if(loadedUser)
+	try
 	{
-		u = *loadedUser;
-		//we can directly show the main window here
-		MainFrame* f = new MainFrame(u);
+		deserialize(u);
+		Utils::morseGenerator  = std::make_unique<MorseGenerator>(u.defaultSpeed, u.defaultPitch, static_cast<MorseGenerator::SignalType>(u.signalType));
+			MainFrame* f = new MainFrame(u);
+SetTopWindow(f);
 		f->Show();
 		return true;
 	}
-else
+catch(const std::exception& e)
 {
 		WelcomeWindow w(u);
 	w.ShowModal();
 	return true;
 	}
 }
-wxIMPLEMENT_APP(MorseHubApp);
+wxIMPLEMENT_APP(MorseHubApp);																																																																
