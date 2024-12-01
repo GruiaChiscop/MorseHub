@@ -15,7 +15,7 @@ Utils::appDataPath = Utils::getAppData();
 	try
 	{
 		deserialize(u);
-		Utils::morseGenerator  = std::make_unique<MorseGenerator>(u.defaultSpeed, u.defaultPitch, static_cast<MorseGenerator::SignalType>(u.signalType));
+		Utils::morseGenerator  = std::make_unique<MorseGenerator>(u.defaultSpeed, u.defaultPitch, u.signalType);
 			MainFrame* f = new MainFrame(u);
 SetTopWindow(f);
 		f->Show();
@@ -28,4 +28,5 @@ catch(const std::exception& e)
 	return true;
 	}
 }
-wxIMPLEMENT_APP(MorseHubApp);																																																																
+
+wxIMPLEMENT_APP(MorseHubApp);			

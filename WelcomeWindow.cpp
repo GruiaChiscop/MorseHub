@@ -5,7 +5,7 @@
 #include "User.h"
 #include <memory>
 #include "Utilities.h"
-std::unique_ptr<MorseGenerator> gen = nullptr;
+#include "SignalGenerator.h"
 
 void WelcomeWindow::OnClose(wxCloseEvent& event)
 {
@@ -19,11 +19,11 @@ void WelcomeWindow::OnTest(wxEvent& event)
 	int pitch;
 	cbxPitch->GetValue().ToInt(&pitch);
 	wxString signal = cbxSignalType->GetValue();
-	MorseGenerator::SignalType type;
-	if(signal=="Sine") type = MorseGenerator::SignalType_Sine;
-	else if(signal == "Square") type = MorseGenerator::SignalType_Square;
-	else if(signal == "Triangle") type = MorseGenerator::SignalType_Triangle;
-	else type = MorseGenerator::SignalType_sawtooth;
+	SType type;
+	if(signal=="Sine") type = Sine;
+	else if(signal == "Square") type = Square;
+	else if(signal == "Triangle") type = Triangle;
+	else type = Sawtooth;
 	gen = std::make_unique<MorseGenerator>(speed, pitch, type);
 		gen->transmitAsync("vvv");
 }
@@ -40,14 +40,14 @@ void WelcomeWindow::updateUser()
 		wxMessageBox("You chose not to add any callsign. You can add one later in settings");
 	}
 	serialize(user);
-	MorseGenerator::SignalType type;
+	SType type;
 	wxString signal = cbxSignalType->GetValue();
-	if(signal=="Sine") type = MorseGenerator::SignalType_Sine;
-	else if(signal == "Square") type = MorseGenerator::SignalType_Square;
-	else if(signal == "Triangle") type = MorseGenerator::SignalType_Triangle;
-	else type = MorseGenerator::SignalType_sawtooth;
-	
-	Utils::morseGenerator = std::make_unique<MorseGenerator>(user.defaultSpeed, user.defaultPitch, static_cast<MorseGenerator::SignalType>(type));
+		if(signal=="Sine") type = Sine;
+	else if(signal == "Square") type = Square;
+	else if(signal == "Triangle") type = Triangle;
+	else type = Sawtooth;
+
+	Utils::morseGenerator = std::make_unique<MorseGenerator>(user.defaultSpeed, user.defaultPitch, type);
 	EndModal(wxID_OK);
 }
 

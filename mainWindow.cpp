@@ -1,6 +1,9 @@
 #include "MainWindow.h"
 #include "Utilities.h"
 #include "User.h"
+#include "RUFZStartDialog.h"
+#include "SignalGenerator.h"
+
 void MainFrame::OnClose(wxEvent &event)
 {
     serialize(user);        // in case it hasn't already serialized and there's unsaved data
@@ -37,13 +40,16 @@ void MainFrame::OnModeChanged(wxEvent &event)
 }
 void MainFrame::OnStart(wxEvent &event)
 {
-    // RUFZStartDialog r(user);
+    int speed = user.defaultSpeed;
+    int pitch = user.defaultPitch;
+    SType type = user.signalType;
+    RUFZStartDialog r(this, speed, pitch, type);
     // morseRunnerStartDialog m(user);
     // ReceptionStartDialog rx(user);
     wxMenuBar* menu = GetMenuBar();
     if(menu->FindItem(ID_RUFZ)->IsChecked())
     {
-        //r.ShowModal();
+        r.ShowModal();
     }
     else if(menu->FindItem(ID_RUNNER)->IsChecked())
     {

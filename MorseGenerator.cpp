@@ -9,7 +9,7 @@
 #include <stdexcept>
 #include <chrono>
 size_t MorseGenerator::pos = 0;
-MorseGenerator::MorseGenerator(int speed, float pitch, SignalType type) : m_frequency {pitch}, m_speed{speed}, m_signalType{type}, gen { pitch, 44100, static_cast<SType>(type)} {
+MorseGenerator::MorseGenerator(int speed, float pitch, SType type) : m_frequency {pitch}, m_speed{speed}, m_signalType{type}, gen { pitch, 44100, type} {
 deviceConfig = ma_device_config_init(ma_device_type_playback);
 deviceConfig.playback.format = ma_format_f32;
 deviceConfig.playback.channels = 1;

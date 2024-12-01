@@ -12,15 +12,8 @@
 class MorseGenerator
 {
     public:
-    enum SignalType
-    {
-        SignalType_Sine = ma_waveform_type_sine,
-        SignalType_Square = ma_waveform_type_square,
-        SignalType_Triangle = ma_waveform_type_triangle,
-        SignalType_sawtooth = ma_waveform_type_sawtooth
-    };
     inline static const std::unordered_map<char, std::string> characters { {'a', ".-"}, {'b', "-..."}, {'c', "-.-."}, {'d', "-.."}, {'e', "."}, {'f', "..-."}, {'g', "--."}, {'h', "...."}, {'i', ".."}, {'j', ".---"}, {'k', "-.-"}, {'l', ".-.."}, {'m', "--"}, {'n', "-."}, {'o', "---"}, {'p', ".--."}, {'q', "--.-"}, {'r', "..."}, {'t', "-"}, {'u', "..-"}, {'v', "...-"}, {'w', ".--"}, {'x', "-..-"}, {'y', "-.--"}, {'z', "--.."}, {'1', ".----"}, {'2', "..---"}, {'3', "...--"}, {'4', "....-"}, {'5', "....."}, {'6', "-...."}, {'7', "--..."}, {'8', "---.."}, {'9', "----."}, {'0', "-----"}, {'?', "..--.."}, {'.', ".-.-.-"}, {'/', "-..-."}, {',', "--..--"}, {'=', "-...-"}, {'+', ".-.-."}};
-    MorseGenerator(int speed = 20, float pitch = 440.0f, SignalType type = SignalType_Sine);
+    MorseGenerator(int speed = 20, float pitch = 440.0f, SType type = Sine);
     ~MorseGenerator();
     void transmit(const std::string& text);
     void transmitAsync(const std::string& text);
@@ -29,7 +22,7 @@ class MorseGenerator
     void outputToFile(const std::string& file, const std::string& text, char separator = ' ');
     private:
     std::vector<float> outputBuffer;
-    SignalType m_signalType = SignalType_Sine;
+    SType m_signalType = Sine;
 int m_speed;
 float m_frequency;
 Generator gen;

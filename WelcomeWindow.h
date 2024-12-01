@@ -9,8 +9,9 @@
 #include <wx/sizer.h>
 #include <wx/dynarray.h>
 #include <wx/msgdlg.h>
-
+#include <memory>
 #include "User.h"
+#include "MorseGenerator.h"
 
 class WelcomeWindow : public wxDialog
 {
@@ -21,6 +22,7 @@ class WelcomeWindow : public wxDialog
 	wxComboBox* cbxSignalType;
 	wxDatePickerCtrl* datePickerDateOfBirth;
 	User user;
+	std::unique_ptr<MorseGenerator> gen = nullptr;
 public:
 	WelcomeWindow(User& u) : wxDialog(nullptr, wxID_ANY, "Welcome to Morse Hub")
 	{
