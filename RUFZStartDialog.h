@@ -75,11 +75,14 @@ cbxSignalType->Disable();
     sizer->Add(okBTN, 0, wxALL | wxCENTER, 10);
     testButton->Bind(wxEVT_BUTTON, &RUFZStartDialog::OnTest, this);
     useExistentCheckBox->Bind(wxEVT_CHECKBOX, &RUFZStartDialog::OnCheckBox, this);
+    okBTN->Bind(wxEVT_BUTTON, &RUFZStartDialog::OnOK, this);
+    cancelBTN->Bind(wxEVT_BUTTON, &RUFZStartDialog::OnCancel, this);
     SetSizer(sizer);
     sizer->Fit(this);
   }
   void OnTest(wxEvent& event);
   void OnCheckBox(wxEvent& event);
-  void onOK(wxEvent& event);
+  void OnOK(wxEvent& event);
+  void OnCancel(wxEvent& event);
 };
 #endif

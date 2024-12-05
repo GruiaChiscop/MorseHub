@@ -49,7 +49,11 @@ void MainFrame::OnStart(wxEvent &event)
     wxMenuBar* menu = GetMenuBar();
     if(menu->FindItem(ID_RUFZ)->IsChecked())
     {
-        r.ShowModal();
+        int res = r.ShowModal();
+        if(res==wxOK)
+        {
+            //show the competition window
+        }
     }
     else if(menu->FindItem(ID_RUNNER)->IsChecked())
     {

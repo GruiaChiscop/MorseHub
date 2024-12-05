@@ -30,7 +30,7 @@ ma_device device;
 ma_device_config deviceConfig;
 static size_t pos;
 float unitLength() const {
-return 60.0f/(50.0f*m_speed);
+return 1/2*m_speed;
 }
 float dashLength() const { return unitLength()*3; }
 float spaceBetweenUnits() const { return unitLength(); }
