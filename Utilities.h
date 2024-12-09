@@ -24,5 +24,18 @@ void say(const string& text, bool wait = false);
 string getAppData();
 string getWD();
 void cwd(const string& newdir);
+string getComputerName();
+string getComputerUserName();
+string getComputerUUID();
+int getAllRunningProcesses();
+bool lockResources();
+bool releaseResources();
+bool appIsAlreadyRunning();
+bool isAppAdmin(); //for windows only
+bool hasScreenReaderActive();
+string getScreenReaderName();
+bool initializeScreenReader();
+void uninitializeScreenReader();
+
 }
 #endif
