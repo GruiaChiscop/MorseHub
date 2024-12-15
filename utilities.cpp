@@ -6,7 +6,12 @@
 #include <vector>
 #include <filesystem>
 #include <cstdlib>
+#ifdef _WIN32
 #include <Windows.h>
+#endif
+#include "Poco/String.h"
+#include "Poco/UnicodeConverter.h"
+
 using namespace std;
 namespace Utils
 {
@@ -18,6 +23,7 @@ vector<string> stringSplit(const string& str, char delim) {
     string token;
     vector<std::string> tokens;
     while(getline(sstream, token, delim)) tokens.push_back(token);
+
     return tokens;
 }
 string toUpper(const string& str) {
