@@ -2,6 +2,7 @@
 #include "Utilities.h"
 #include "User.h"
 #include "RUFZStartDialog.h"
+#include "RUFZCompetitionFrame.h"
 #include "SignalGenerator.h"
 
 void MainFrame::OnClose(wxEvent &event)

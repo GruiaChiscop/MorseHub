@@ -13,13 +13,21 @@ class MorseGenerator
 {
     public:
     inline static const std::unordered_map<char, std::string> characters { {'a', ".-"}, {'b', "-..."}, {'c', "-.-."}, {'d', "-.."}, {'e', "."}, {'f', "..-."}, {'g', "--."}, {'h', "...."}, {'i', ".."}, {'j', ".---"}, {'k', "-.-"}, {'l', ".-.."}, {'m', "--"}, {'n', "-."}, {'o', "---"}, {'p', ".--."}, {'q', "--.-"}, {'r', "..."}, {'t', "-"}, {'u', "..-"}, {'v', "...-"}, {'w', ".--"}, {'x', "-..-"}, {'y', "-.--"}, {'z', "--.."}, {'1', ".----"}, {'2', "..---"}, {'3', "...--"}, {'4', "....-"}, {'5', "....."}, {'6', "-...."}, {'7', "--..."}, {'8', "---.."}, {'9', "----."}, {'0', "-----"}, {'?', "..--.."}, {'.', ".-.-.-"}, {'/', "-..-."}, {',', "--..--"}, {'=', "-...-"}, {'+', ".-.-."}};
-    MorseGenerator(int speed = 20, float pitch = 440.0f, SType type = Sine);
+    MorseGenerator(int speed = 20, float frequency = 440.0f, SType type = Sine);
     ~MorseGenerator();
     void transmit(const std::string& text);
     void transmitAsync(const std::string& text);
     void toFile(const std::string& file, const std::string& text);
     std::string getOutput(const std::string& text, char separator = ' ');
     void outputToFile(const std::string& file, const std::string& text, char separator = ' ');
+    std::vector<std::string> getOutputDevices() const;
+    void setOutputDevice(int deviceindex);
+    int getSpeed() const { return m_speed; }
+    void setSpeed(int speed) { m_speed = speed; }
+    float getFrequency() const { return m_frequency; }
+    void setFrequency(float frequency) { m_frequency = frequency; }
+    SType getSignalType() const { return m_signalType; }
+    void setSignalType(SType type) { m_signalType = type; }
     private:
     std::vector<float> outputBuffer;
     SType m_signalType = Sine;
@@ -28,11 +36,13 @@ float m_frequency;
 Generator gen;
 ma_device device;
 ma_device_config deviceConfig;
+ma_context context; //used for playback devices
+ma_context_config contextConfig;
 static size_t pos;
 float unitLength() const {
-return 1/2*m_speed;
+return 1.2/m_speed;
 }
-float dashLength() const { return unitLength()*3; }
+float dashLength() const { return 3.6/m_speed; }
 float spaceBetweenUnits() const { return unitLength(); }
 float spaceBetweenCharacters() const { return dashLength(); }
 float spaceBetweenWords() const { return 7*unitLength(); }

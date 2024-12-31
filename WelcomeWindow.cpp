@@ -16,15 +16,15 @@ void WelcomeWindow::OnTest(wxEvent& event)
 {
 	int speed;
 	cbxSpeed->GetValue().ToInt(&speed);
-	int pitch;
-	cbxPitch->GetValue().ToInt(&pitch);
+	int frequency;
+	cbxPitch->GetValue().ToInt((&frequency);
 	wxString signal = cbxSignalType->GetValue();
 	SType type;
 	if(signal=="Sine") type = Sine;
 	else if(signal == "Square") type = Square;
 	else if(signal == "Triangle") type = Triangle;
 	else type = Sawtooth;
-	gen = std::make_unique<MorseGenerator>(speed, pitch, type);
+	gen = std::make_unique<MorseGenerator>(speed, frequency, type);
 		gen->transmitAsync("vvv");
 }
 

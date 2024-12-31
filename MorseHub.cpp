@@ -11,7 +11,6 @@ bool MorseHubApp::OnInit()
 	User u;
 Utils::currentWD = Utils::getWD();
 Utils::appDataPath = Utils::getAppData();
-
 	try
 	{
 		deserialize(u);

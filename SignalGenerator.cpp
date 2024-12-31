@@ -47,3 +47,4 @@ void Generator::addSilence(float duration, std::vector<float>& buffer) {
     buffer.insert(buffer.end(), duration*sampleRate, 0.0f);
 }
 void Generator::reset() { buffer.clear(); }
+

@@ -7,8 +7,9 @@
 
 class RUFZStartDialog : public wxDialog
 {
-  int m_speed, m_pitch;
-  SType m_type;
+  int& m_speed;
+  int& m_frequency;
+  SType& m_type;
   bool useExistent;
   wxComboBox *cbxSpeed;
   wxComboBox *cbxPitch;
@@ -17,11 +18,8 @@ class RUFZStartDialog : public wxDialog
 
 std::unique_ptr<MorseGenerator> gen = nullptr;
 public:
-  RUFZStartDialog(wxWindow *parent, int &speed, int &pitch, SType &type) : wxDialog(parent, wxID_ANY, "RufzXP mode details")
+  RUFZStartDialog(wxWindow *parent, int &speed, int& frequency, SType &type) : wxDialog(parent, wxID_ANY, "RufzXP mode details"), m_speed{speed}, m_frequency{frequency}, m_type{type}
   {
-    m_speed = speed;
-    m_pitch = pitch;
-    m_type = type;
     useExistent = true;
     wxBoxSizer *sizer = new wxBoxSizer(wxVERTICAL);
     wxStaticText *welcomeLabel = new wxStaticText(this, wxID_ANY, "Here you select the settings for RufzXP mode");
