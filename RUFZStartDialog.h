@@ -7,18 +7,19 @@
 
 class RUFZStartDialog : public wxDialog
 {
-  int& m_speed;
-  int& m_frequency;
-  SType& m_type;
+  int &m_speed;
+  int &m_frequency;
+  SType &m_type;
   bool useExistent;
   wxComboBox *cbxSpeed;
   wxComboBox *cbxPitch;
   wxComboBox *cbxSignalType;
   wxCheckBox *useExistentCheckBox;
 
-std::unique_ptr<MorseGenerator> gen = nullptr;
+  std::unique_ptr<MorseGenerator> gen = nullptr;
+
 public:
-  RUFZStartDialog(wxWindow *parent, int &speed, int& frequency, SType &type) : wxDialog(parent, wxID_ANY, "RufzXP mode details"), m_speed{speed}, m_frequency{frequency}, m_type{type}
+  RUFZStartDialog(wxWindow *parent, int &speed, int &frequency, SType &type) : wxDialog(parent, wxID_ANY, "RufzXP mode details"), m_speed{speed}, m_frequency{frequency}, m_type{type}
   {
     useExistent = true;
     wxBoxSizer *sizer = new wxBoxSizer(wxVERTICAL);
@@ -64,12 +65,12 @@ public:
     cbxSignalType->Append(types);
     cbxSignalType->SetSelection(0); // Set default value
     sizer->Add(cbxSignalType, 0, wxALL | wxEXPAND, 5);
-cbxSignalType->Disable();
-    wxButton *testButton = new wxButton(this, wxID_ANY, "Test");
+    cbxSignalType->Disable();
+    wxButton *testButton = new wxButton(this, wxID_ANY, "&Test");
     sizer->Add(testButton, 0, wxALL | wxCENTER, 10);
-    wxButton* cancelBTN = new wxButton(this, wxID_CANCEL, "&Cancel");
+    wxButton *cancelBTN = new wxButton(this, wxID_CANCEL, "&Cancel");
     sizer->Add(cancelBTN, 0, wxALL | wxCENTER, 10);
-    wxButton* okBTN = new wxButton(this, wxID_OK, "&OK");
+    wxButton *okBTN = new wxButton(this, wxID_OK, "&OK");
     sizer->Add(okBTN, 0, wxALL | wxCENTER, 10);
     testButton->Bind(wxEVT_BUTTON, &RUFZStartDialog::OnTest, this);
     useExistentCheckBox->Bind(wxEVT_CHECKBOX, &RUFZStartDialog::OnCheckBox, this);
@@ -78,9 +79,9 @@ cbxSignalType->Disable();
     SetSizer(sizer);
     sizer->Fit(this);
   }
-  void OnTest(wxEvent& event);
-  void OnCheckBox(wxEvent& event);
-  void OnOK(wxEvent& event);
-  void OnCancel(wxEvent& event);
+  void OnTest(wxEvent &event);
+  void OnCheckBox(wxEvent &event);
+  void OnOK(wxEvent &event);
+  void OnCancel(wxEvent &event);
 };
 #endif

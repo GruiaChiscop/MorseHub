@@ -17,7 +17,7 @@ void WelcomeWindow::OnTest(wxEvent& event)
 	int speed;
 	cbxSpeed->GetValue().ToInt(&speed);
 	int frequency;
-	cbxPitch->GetValue().ToInt((&frequency);
+	cbxPitch->GetValue().ToInt(&frequency);
 	wxString signal = cbxSignalType->GetValue();
 	SType type;
 	if(signal=="Sine") type = Sine;
@@ -48,7 +48,7 @@ void WelcomeWindow::updateUser()
 	else type = Sawtooth;
 
 	Utils::morseGenerator = std::make_unique<MorseGenerator>(user.defaultSpeed, user.defaultPitch, type);
-	EndModal(wxID_OK);
+	EndModal(wxOK);
 }
 
 void WelcomeWindow::onFinish(wxEvent& event)

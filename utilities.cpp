@@ -63,11 +63,10 @@ namespace Utils
     {
         return rand() % 2 == 0;
     }
-    
+
     long long randomInteger(long long min, long long max)
     {
-        std::uniform_int_distribution<long long> dis(min, max);
-        return dis(gen);
+        return -1;
     }
 
     void say(const string &text, bool wait)

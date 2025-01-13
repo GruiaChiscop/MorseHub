@@ -5,12 +5,14 @@
 #include "MainWindow.h"
 #include "Utilities.h"
 #include <memory>
+#include <ctime>
 
 bool MorseHubApp::OnInit()
 {
 	User u;
 Utils::currentWD = Utils::getWD();
 Utils::appDataPath = Utils::getAppData();
+srand(time_t());
 	try
 	{
 		deserialize(u);

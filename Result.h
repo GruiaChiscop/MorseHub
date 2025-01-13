@@ -9,6 +9,7 @@ std::string text;
 std::string typedText;
 int points;
 int miliseconds;
+int speed;
+int frequency;
 std::unique_ptr<MorseGenerator> morseGenerator;
-Result(const std::string& text="", const std::string& typed="", int points = 0, int miliseconds = 0, std::unique_ptr<MorseGenerator> generator = nullptr);
 };

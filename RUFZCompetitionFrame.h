@@ -44,7 +44,7 @@ sizer->Add(speedLabel, 0, wxALL, 5);
 sizer->Add(speedText, 0, wxALL, 5);
 sizer->Add(pointsLabel, 0, wxALL, 5);
 sizer->Add(pointsText, 0, wxALL, 5);
-wxButton* submitBTN = new wxButton(panel= wxID_OK, "Submit");
+wxButton* submitBTN = new wxButton(panel, wxID_OK, "Submit");
 sizer->Add(submitBTN, 0, wxALL | wxCENTER, 10);
 //the exit button
 wxButton* exitBTN = new wxButton(panel, wxID_CANCEL, "E&xit");
