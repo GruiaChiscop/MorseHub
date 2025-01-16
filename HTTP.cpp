@@ -1,7 +1,8 @@
 #include "curl/curl.h"
 #include <string>
 #include "HTTP.h"
-#include "thread.h"
+#define THREAD_IMPLEMENTATION
+#include "Thread.h"
 // callbacks for CURL
 
 static size_t HTTPRequest_write_callback(void *ptr, size_t size, size_t nmemb, std::string *data)

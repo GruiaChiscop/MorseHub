@@ -7,11 +7,11 @@ env.Decider('content-timestamp')
 if env["PLATFORM"] == "win32":
     env.Append(CCFLAGS = ["/std:c++20", "/Zc:inline", "/EHsc", "/MT", "/Z7"])
     #env.Append(LINKFLAGS=["/MACHINE:X64"])
-    env.Append(LIBS = ["kernel32", "user32", "gdi32", "comdlg32", "winspool",    "shell32", "shlwapi", "ole32", "oleaut32", "uuid", "advapi32", "version", "comctl32", "rpcrt4", "ws2_32", "wininet", "winmm", "wxmsw32u",  "UniversalSpeechStatic", "PocoFoundationmt", "PocoEncodingsmt", "PocoJSONmt", "PocoNetmt", "PocoUtilmt", "PocoXMLmt", "CppUnitmt", "libcurl"])
+    env.Append(LIBS = ["kernel32", "user32", "gdi32", "comdlg32", "winspool",    "shell32", "shlwapi", "ole32", "oleaut32", "uuid", "advapi32", "version", "comctl32", "rpcrt4", "ws2_32", "wininet", "winmm", "wldap32", "normaliz", "crypt32", "imm32", "OneCoreUAP", "dinput8", "dxguid", "gdi32", "iphlpapi", "netapi32", "wxmsw32u",  "UniversalSpeechStatic", "PocoFoundationmt", "PocoEncodingsmt", "PocoJSONmt", "PocoNetmt", "PocoUtilmt", "PocoXMLmt", "CppUnitmt", "libcurl"])
     env.Append(LIBPATH = ["winlib"])
     env.Append(CPPPATH = ["winlib/mswu", "winlib/mswu/wx", "dep/wxInclude/msvc", "dep/wxInclude/msvc/wx"])
-    env.Append(CPPDEFINES =["WXUSINGDLL"])
-
+    env.Append(CPPDEFINES =["WXUSINGDLL", "CURL_STATICLIB", "POCO_STATIC"])
+#env.Append(CPPDEFINES=["CURL_STATICLIB"])
 env.Append(CPPPATH = ["dep", "dep/wxInclude"])
 
 sources = Glob("*.cpp")

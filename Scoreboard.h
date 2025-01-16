@@ -2,13 +2,14 @@
 #include <string>
 #include <vector>
 #include "Result.h"
-
+#include "sqlite3/sqlite3.h"
 using namespace std;
-
+using SortCondition= bool(*)(const Result& a, const Result& b);
+using SQLiteCallback = int(*)(void*, int, char**, char**);
 class Scoreboard
 {
     public:
-    int errors() const { return m_errors; }
+    int errors() const { return m_errors; } //returns all erros from each result, added together. If the vector contains 30 results, and 10 results have 10 errors, two have only 3 and other five have 9, the result will be: (10*10)+(3*2)+(9*5)=100+6+45=141
     const std::vector<Result> results() { return m_results; }
     size_t addResult(const Result& r);
     size_t removeLast();
@@ -17,10 +18,18 @@ class Scoreboard
     size_t removeWhat(const Result& r);
     Result getHighest() const;
     Result getLowest() const;
+    double average(); //makes the average between scores
+    void sortByErrors(bool ascending=true);
     void sort(bool ascending=true);
-
+void sortBy(SortCondition condition);
     private:
     vector<Result> m_results;
+    sqlite3* database;
+    sqlite3_stmt* insertSTMT, *removeSTMT, *querySTMT, *extraSTMT;
     int m_errors = 0;
+    SQLiteCallback queryCallback;
+    SQLiteCallback insertCallback;
+    SQLiteCallback removeCallback;
+
     void update();
 };

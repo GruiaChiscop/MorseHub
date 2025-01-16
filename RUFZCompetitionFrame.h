@@ -62,6 +62,7 @@ sizer->Fit(this);
     private:
     void play();
     void play(const std::string& text);
+    void evaluate();
     void finish();
     //events
     void OnKeyPress(wxKeyEvent& event);

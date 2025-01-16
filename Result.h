@@ -5,11 +5,11 @@
 
 struct Result
 {
+    int id;
 std::string text;
 std::string typedText;
 int points;
 int miliseconds;
 int speed;
 int frequency;
-std::unique_ptr<MorseGenerator> morseGenerator;
 };

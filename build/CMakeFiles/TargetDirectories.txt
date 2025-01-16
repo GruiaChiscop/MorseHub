@@ -1,0 +1,3 @@
+C:/Users/gruiachiscop/morsehub/build/CMakeFiles/MorseHub.dir
+C:/Users/gruiachiscop/morsehub/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/gruiachiscop/morsehub/build/CMakeFiles/ZERO_CHECK.dir

@@ -27,6 +27,10 @@ void RUFZCompetitionFrame::OnAppear(wxEvent& event)
 void RUFZCompetitionFrame::OnKeyPress(wxKeyEvent& event)
 {
     if(event.GetKeyCode() == WXK_F6 && !played) play(m_text);
+    if(event.GetKeyCode()==WXK_RETURN)
+    {
+
+    }
 }
 void RUFZCompetitionFrame::OnExit(wxEvent& event)
 {
