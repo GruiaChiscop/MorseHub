@@ -9,8 +9,11 @@ using SQLiteCallback = int(*)(void*, int, char**, char**);
 class Scoreboard
 {
     public:
-    int errors() const { return m_errors; } //returns all erros from each result, added together. If the vector contains 30 results, and 10 results have 10 errors, two have only 3 and other five have 9, the result will be: (10*10)+(3*2)+(9*5)=100+6+45=141
-    const std::vector<Result> results() { return m_results; }
+    Scoreboard();
+    void openSCB(const string& file);
+    void close();
+    int errors() const { return m_errors; } 
+    vector<Result> results() { return m_results; }
     size_t addResult(const Result& r);
     size_t removeLast();
     size_t removeFirst();
@@ -20,7 +23,7 @@ class Scoreboard
     Result getLowest() const;
     double average(); //makes the average between scores
     void sortByErrors(bool ascending=true);
-    void sort(bool ascending=true);
+    void sortByScore(bool ascending=true);
 void sortBy(SortCondition condition);
     private:
     vector<Result> m_results;
@@ -30,6 +33,5 @@ void sortBy(SortCondition condition);
     SQLiteCallback queryCallback;
     SQLiteCallback insertCallback;
     SQLiteCallback removeCallback;
-
-    void update();
+bool isOpen;
 };

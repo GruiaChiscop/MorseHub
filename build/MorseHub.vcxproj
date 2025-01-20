@@ -336,6 +336,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\gruiachiscop\morsehub\MorseHub.cpp" />
     <ClCompile Include="C:\Users\gruiachiscop\morsehub\RUFZCompetitionFrame.cpp" />
     <ClCompile Include="C:\Users\gruiachiscop\morsehub\RUFZStartDialog.cpp" />
+    <ClCompile Include="C:\Users\gruiachiscop\morsehub\Scoreboard.cpp" />
     <ClCompile Include="C:\Users\gruiachiscop\morsehub\SignalGenerator.cpp" />
     <ClCompile Include="C:\Users\gruiachiscop\morsehub\StringGen.cpp" />
     <ClCompile Include="C:\Users\gruiachiscop\morsehub\UpdateDialog.cpp" />

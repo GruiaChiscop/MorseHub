@@ -16,6 +16,9 @@
     <ClCompile Include="C:\Users\gruiachiscop\morsehub\RUFZStartDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\gruiachiscop\morsehub\Scoreboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\gruiachiscop\morsehub\SignalGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
