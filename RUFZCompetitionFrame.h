@@ -4,6 +4,7 @@
 #include "MorseGenerator.h"
 #include "StringGen.h"
 #include <memory>
+#include "User.h"
 
 class RUFZCompetitionFrame : public wxFrame
 {
@@ -12,17 +13,20 @@ class RUFZCompetitionFrame : public wxFrame
     wxStaticText* resultText;
     wxStaticText* speedText;
     wxStaticText* pointsText;
+    User user;
     int m_speed, m_pitch;
     int m_points{};
-    SType m_type;
+    SType m_signalType;
     StringGen strgen;
     bool played = false;
     std::string m_text;
     std::unique_ptr<MorseGenerator> generator = nullptr;
+    int rounds=0;
     public:
-    RUFZCompetitionFrame(wxWindow* parent, int& speed, int& pitch, SType& type) : wxFrame(parent, wxID_ANY, "Competition"), m_speed{speed}, m_pitch{pitch}, m_type{type}
+    RUFZCompetitionFrame(wxWindow* parent, User& u) : wxFrame(parent, wxID_ANY, "Competition"), user(u)
     {
-        generator = std::make_unique<MorseGenerator>(speed, pitch, type);
+        generator = std::make_unique<MorseGenerator>(user.defaultSpeed, user.defaultPitch, user.signalType);
+        m_speed=user.defaultSpeed; m_pitch=user.defaultPitch; m_signalType=user.signalType;
         wxPanel* panel = new wxPanel(this);
         wxBoxSizer* sizer = new wxBoxSizer(wxVERTICAL);
         wxStaticText* windowLabel = new wxStaticText(panel, wxID_ANY, "RufzXP competition");

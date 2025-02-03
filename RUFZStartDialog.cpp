@@ -4,7 +4,7 @@
 
 void RUFZStartDialog::OnTest(wxEvent &event)
 {
-    gen = std::make_unique<MorseGenerator>(m_speed, m_frequency, m_type);
+    gen = std::make_unique<MorseGenerator>(user.defaultSpeed, user.defaultPitch, user.signalType);
     gen->transmitAsync("vvv= = +");
 }
 void RUFZStartDialog::OnCheckBox(wxEvent &event)
@@ -24,18 +24,19 @@ void RUFZStartDialog::OnCheckBox(wxEvent &event)
 }
 void RUFZStartDialog::OnOK(wxEvent &event)
 {
-    cbxSpeed->GetValue().ToInt(&m_speed);
-    cbxPitch->GetValue().ToInt(&m_frequency);
+    cbxSpeed->GetValue().ToInt(&user.defaultSpeed);
+    cbxPitch->GetValue().ToInt(&user.defaultPitch);
     wxString signal = cbxSignalType->GetValue();
-    SType type;
     if (signal == "Sine")
-        type = Sine;
+        user.signalType = Sine;
     else if (signal == "Square")
-        type = Square;
+        user.signalType = Square;
     else if (signal == "Triangle")
-        type = Triangle;
-    else
-        type = Sawtooth;
+        user.signalType = Triangle;
+    else if(signal=="Sawtooth")
+        user.signalType = Sawtooth;
+        else
+        user.signalType = Sine;
         EndModal(wxOK);
 }
 void RUFZStartDialog::OnCancel(wxEvent& event)

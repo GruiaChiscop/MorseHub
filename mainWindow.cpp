@@ -41,10 +41,7 @@ void MainFrame::OnModeChanged(wxEvent &event)
 }
 void MainFrame::OnStart(wxEvent &event)
 {
-    int speed = user.defaultSpeed;
-    int pitch = user.defaultPitch;
-    SType type = user.signalType;
-    RUFZStartDialog r(this, speed, pitch, type);
+    RUFZStartDialog r(this, user.defaultSpeed, user.defaultPitch, user.signalType);
     // morseRunnerStartDialog m(user);
     // ReceptionStartDialog rx(user);
     wxMenuBar* menu = GetMenuBar();

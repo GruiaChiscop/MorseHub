@@ -3,7 +3,7 @@
 #include <fstream>
 #include <stdexcept>
 using nlohmann::json;
-//implemement the serialization logic for each struct
+//implement the serialization logic for each struct
 //wxDateTime:
 void to_json(json& j, const wxDateTime& dt)
 {
@@ -23,7 +23,7 @@ void from_json(const json& j, wxDateTime& dt)
 
 void to_json(json& j, const User& user)
 {
-    j = json{{"name", user.name}, {"callsign", user.callsign}, {"dateOfBirth", user.dateOfBirth}, {"defaultSpeed", user.defaultSpeed}, {"defaultPitch", user.defaultPitch}, {"signalType", static_cast<int>(user.signalType)}};
+    j = json{{"name", user.name}, {"callsign", user.callsign}, {"dateOfBirth", user.dateOfBirth}, {"defaultSpeed", user.defaultSpeed}, {"defaultPitch", user.defaultPitch}, {"maxRounds", user.maxRounds}, {"signalType", static_cast<int>(user.signalType)}};
 }
 void from_json(const json& j, User& user)
 {
@@ -32,6 +32,7 @@ void from_json(const json& j, User& user)
     j.at("dateOfBirth").get_to(user.dateOfBirth);
     j.at("defaultSpeed").get_to(user.defaultSpeed);
     j.at("defaultPitch").get_to(user.defaultPitch);
+    j.at("maxRounds").get_to(user.maxRounds);
     user.signalType = static_cast<SType>(j.at("signalType").get<int>());
 }
 

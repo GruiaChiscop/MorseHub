@@ -11,6 +11,7 @@ struct User
 	int defaultSpeed;
 	int defaultPitch;
 SType signalType;
+int maxRounds;
 	User()
 	{
 		name = "";
@@ -19,6 +20,7 @@ SType signalType;
 		defaultSpeed = 20;
 		defaultPitch = 440;
 		signalType = Sine;
+		maxRounds=50;
 	}
 	User(const std::string& name, const std::string& callsign)
 	{
@@ -28,6 +30,7 @@ SType signalType;
 		defaultSpeed = 20;
 		defaultPitch = 440;
 		signalType = Sine;
+		maxRounds=50;
 	}
 };
 

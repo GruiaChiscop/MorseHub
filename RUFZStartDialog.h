@@ -4,12 +4,11 @@
 #include "SignalGenerator.h"
 #include <memory>
 #include "MorseGenerator.h"
+#include "user.h"
 
 class RUFZStartDialog : public wxDialog
 {
-  int &m_speed;
-  int &m_frequency;
-  SType &m_type;
+  User& user;
   bool useExistent;
   wxComboBox *cbxSpeed;
   wxComboBox *cbxPitch;
@@ -19,7 +18,7 @@ class RUFZStartDialog : public wxDialog
   std::unique_ptr<MorseGenerator> gen = nullptr;
 
 public:
-  RUFZStartDialog(wxWindow *parent, int &speed, int &frequency, SType &type) : wxDialog(parent, wxID_ANY, "RufzXP mode details"), m_speed{speed}, m_frequency{frequency}, m_type{type}
+  RUFZStartDialog(wxWindow *parent, User& u) : wxDialog(parent, wxID_ANY, "RufzXP mode details"), user(u)
   {
     useExistent = true;
     wxBoxSizer *sizer = new wxBoxSizer(wxVERTICAL);

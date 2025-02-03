@@ -17,7 +17,7 @@ void Scoreboard::openSCB(const string& file)
 
 const char* insertSQL = "INSERT INTO Results (text, typed_text, points, miliseconds, speed, pitch) VALUES (?, ?, ?, ?, ?, ?);";
 const char* querySQL = "SELECT * FROM Results;";
-const char* removeSQL = "DELETE FROM Results "
+const char* removeSQL = "DELETE FROM Results ";
 sqlite3_prepare_v2(database, insertSQL, -1, &insertSTMT, NULL);
 sqlite3_prepare_v2(database, querySQL, -1, &querySTMT, NULL);
     isOpen=true;

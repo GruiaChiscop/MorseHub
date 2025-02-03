@@ -18,8 +18,8 @@ srand(time_t());
 		deserialize(u);
 		Utils::morseGenerator  = std::make_unique<MorseGenerator>(u.defaultSpeed, u.defaultPitch, u.signalType);
 			MainFrame* f = new MainFrame(u);
-SetTopWindow(f);
 		f->Show();
+SetTopWindow(f);
 		return true;
 	}
 catch(const std::exception& e)
@@ -30,4 +30,4 @@ catch(const std::exception& e)
 	}
 }
 
-wxIMPLEMENT_APP(MorseHubApp);			
+wxIMPLEMENT_APP(MorseHubApp);
