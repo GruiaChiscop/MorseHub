@@ -5,7 +5,7 @@
 		{
 			"multiConfig" : true,
 			"name" : "Visual Studio 17 2022",
-			"platform" : "ARM64"
+			"platform" : "x64"
 		},
 		"paths" : 
 		{
@@ -19,15 +19,15 @@
 			"isDirty" : false,
 			"major" : 3,
 			"minor" : 31,
-			"patch" : 0,
-			"string" : "3.31.0",
+			"patch" : 5,
+			"string" : "3.31.5",
 			"suffix" : ""
 		}
 	},
 	"objects" : 
 	[
 		{
-			"jsonFile" : "codemodel-v2-c323b5390bcdb3e6b0fd.json",
+			"jsonFile" : "codemodel-v2-12d7590006f5bddc662d.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
@@ -36,7 +36,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-1ebe11a6a2343eb2fc48.json",
+			"jsonFile" : "cache-v2-808d12d5d3af9ecbb0a9.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -45,7 +45,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cmakeFiles-v1-bcac7fab6d5bac0b491c.json",
+			"jsonFile" : "cmakeFiles-v1-7404a9dc892ced4f993c.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -54,7 +54,7 @@
 			}
 		},
 		{
-			"jsonFile" : "toolchains-v1-61cd87d42a8946284774.json",
+			"jsonFile" : "toolchains-v1-2ffb541d0cecffc200a5.json",
 			"kind" : "toolchains",
 			"version" : 
 			{
@@ -91,7 +91,7 @@
 				"responses" : 
 				[
 					{
-						"jsonFile" : "cache-v2-1ebe11a6a2343eb2fc48.json",
+						"jsonFile" : "cache-v2-808d12d5d3af9ecbb0a9.json",
 						"kind" : "cache",
 						"version" : 
 						{
@@ -100,7 +100,7 @@
 						}
 					},
 					{
-						"jsonFile" : "codemodel-v2-c323b5390bcdb3e6b0fd.json",
+						"jsonFile" : "codemodel-v2-12d7590006f5bddc662d.json",
 						"kind" : "codemodel",
 						"version" : 
 						{
@@ -109,7 +109,7 @@
 						}
 					},
 					{
-						"jsonFile" : "toolchains-v1-61cd87d42a8946284774.json",
+						"jsonFile" : "toolchains-v1-2ffb541d0cecffc200a5.json",
 						"kind" : "toolchains",
 						"version" : 
 						{
@@ -118,7 +118,7 @@
 						}
 					},
 					{
-						"jsonFile" : "cmakeFiles-v1-bcac7fab6d5bac0b491c.json",
+						"jsonFile" : "cmakeFiles-v1-7404a9dc892ced4f993c.json",
 						"kind" : "cmakeFiles",
 						"version" : 
 						{

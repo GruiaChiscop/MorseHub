@@ -16,7 +16,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/3.31.0/CMakeSystem.cmake"
+			"path" : "build/CMakeFiles/3.31.5/CMakeSystem.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -290,7 +290,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/3.31.0/CMakeCCompiler.cmake"
+			"path" : "build/CMakeFiles/3.31.5/CMakeCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -544,7 +544,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/3.31.0/CMakeCXXCompiler.cmake"
+			"path" : "build/CMakeFiles/3.31.5/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -618,7 +618,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/3.31.0/CMakeRCCompiler.cmake"
+			"path" : "build/CMakeFiles/3.31.5/CMakeRCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -697,7 +697,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/3.31.0/CMakeCCompiler.cmake"
+			"path" : "build/CMakeFiles/3.31.5/CMakeCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -821,7 +821,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/3.31.0/CMakeCXXCompiler.cmake"
+			"path" : "build/CMakeFiles/3.31.5/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -847,8 +847,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/gruiachiscop/morsehub/build",
-		"source" : "C:/Users/gruiachiscop/morsehub"
+		"build" : "C:/Users/chisc/morsehub/build",
+		"source" : "C:/Users/chisc/morsehub"
 	},
 	"version" : 
 	{

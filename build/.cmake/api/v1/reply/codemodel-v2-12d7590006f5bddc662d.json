@@ -50,14 +50,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "MorseHub::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-MorseHub-Debug-5e4ba2fc7326d9b6d6b9.json",
+					"jsonFile" : "target-MorseHub-Debug-48a50b17f11c26b4087e.json",
 					"name" : "MorseHub",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ZERO_CHECK-Debug-3452d24d2da76cd4685e.json",
+					"jsonFile" : "target-ZERO_CHECK-Debug-feb8f82e01fc7ee1b844.json",
 					"name" : "ZERO_CHECK",
 					"projectIndex" : 0
 				}
@@ -112,14 +112,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "MorseHub::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-MorseHub-Release-54435ec36cf3558f9e1f.json",
+					"jsonFile" : "target-MorseHub-Release-cdfe928426625ca1aa02.json",
 					"name" : "MorseHub",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ZERO_CHECK-Release-3452d24d2da76cd4685e.json",
+					"jsonFile" : "target-ZERO_CHECK-Release-feb8f82e01fc7ee1b844.json",
 					"name" : "ZERO_CHECK",
 					"projectIndex" : 0
 				}
@@ -174,14 +174,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "MorseHub::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-MorseHub-MinSizeRel-d4ec1ca67aa8b1252d2b.json",
+					"jsonFile" : "target-MorseHub-MinSizeRel-e453e2cbb03eae0c40d1.json",
 					"name" : "MorseHub",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-3452d24d2da76cd4685e.json",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-feb8f82e01fc7ee1b844.json",
 					"name" : "ZERO_CHECK",
 					"projectIndex" : 0
 				}
@@ -236,14 +236,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "MorseHub::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-MorseHub-RelWithDebInfo-dead10f70c035fd6629d.json",
+					"jsonFile" : "target-MorseHub-RelWithDebInfo-7c44d7cfd71c8d65feb1.json",
 					"name" : "MorseHub",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-3452d24d2da76cd4685e.json",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-feb8f82e01fc7ee1b844.json",
 					"name" : "ZERO_CHECK",
 					"projectIndex" : 0
 				}
@@ -253,8 +253,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/gruiachiscop/morsehub/build",
-		"source" : "C:/Users/gruiachiscop/morsehub"
+		"build" : "C:/Users/chisc/morsehub/build",
+		"source" : "C:/Users/chisc/morsehub"
 	},
 	"version" : 
 	{

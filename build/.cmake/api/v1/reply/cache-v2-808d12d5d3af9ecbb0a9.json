@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.41.34120/bin/Hostarm64/arm64/lib.exe"
+			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/Hostx64/x64/lib.exe"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -39,7 +39,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/gruiachiscop/morsehub/build"
+			"value" : "c:/Users/chisc/morsehub/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -75,7 +75,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "0"
+			"value" : "5"
 		},
 		{
 			"name" : "CMAKE_COMMAND",
@@ -343,7 +343,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/machine:ARM64"
+			"value" : "/machine:x64"
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_DEBUG",
@@ -443,7 +443,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/gruiachiscop/morsehub/build/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/chisc/morsehub/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -467,7 +467,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Professional"
+			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community"
 		},
 		{
 			"name" : "CMAKE_GENERATOR_PLATFORM",
@@ -503,7 +503,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/gruiachiscop/morsehub"
+			"value" : "C:/Users/chisc/morsehub"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -531,7 +531,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.41.34120/bin/Hostarm64/arm64/link.exe"
+			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/Hostx64/x64/link.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -547,7 +547,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/machine:ARM64"
+			"value" : "/machine:x64"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_DEBUG",
@@ -835,7 +835,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/machine:ARM64"
+			"value" : "/machine:x64"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_DEBUG",
@@ -947,7 +947,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/machine:ARM64"
+			"value" : "/machine:x64"
 		},
 		{
 			"name" : "CMAKE_STATIC_LINKER_FLAGS_DEBUG",
@@ -1039,7 +1039,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/gruiachiscop/morsehub/build"
+			"value" : "C:/Users/chisc/morsehub/build"
 		},
 		{
 			"name" : "MorseHub_IS_TOP_LEVEL",
@@ -1063,7 +1063,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/gruiachiscop/morsehub"
+			"value" : "C:/Users/chisc/morsehub"
 		}
 	],
 	"kind" : "cache",

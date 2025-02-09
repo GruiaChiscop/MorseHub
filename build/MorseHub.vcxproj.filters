@@ -1,61 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\HTTP.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\HTTP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\MorseGenerator.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\MorseGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\MorseHub.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\MorseHub.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\RUFZCompetitionFrame.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\RUFZCompetitionFrame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\RUFZStartDialog.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\RUFZStartDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\Scoreboard.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\Scoreboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\SignalGenerator.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\SignalGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\StringGen.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\StringGen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\UpdateDialog.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\UpdateDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\Updater.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\Updater.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\User.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\User.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\WelcomeWindow.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\WelcomeWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\mainWindow.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\mainWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\utilities.cpp">
+    <ClCompile Include="C:\Users\chisc\morsehub\utilities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\dep\blastspeak.c">
+    <ClCompile Include="C:\Users\chisc\morsehub\dep\blastspeak.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\gruiachiscop\morsehub\dep\miniaudio.c">
+    <ClCompile Include="C:\Users\chisc\morsehub\dep\miniaudio.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\gruiachiscop\morsehub\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\chisc\morsehub\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{721AD7B6-3455-3E1B-B1B3-2539F68AA39F}</UniqueIdentifier>
+      <UniqueIdentifier>{BBCB15CC-DA79-3599-8CF1-726512042E14}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

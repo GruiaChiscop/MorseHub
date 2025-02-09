@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "MinSizeRel/MorseHub.exe"
+			"path" : "RelWithDebInfo/MorseHub.exe"
 		},
 		{
-			"path" : "MinSizeRel/MorseHub.pdb"
+			"path" : "RelWithDebInfo/MorseHub.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -65,7 +65,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zc:inline /EHsc /MT /Z7 /O1 /Ob1 /DNDEBUG -std:c++20 -MD"
+					"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zc:inline /EHsc /MT /Z7 /Zi /O2 /Ob1 /DNDEBUG -std:c++20 -MD"
 				}
 			],
 			"defines" : 
@@ -79,27 +79,27 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/gruiachiscop/morsehub/winlib/mswu"
+					"path" : "C:/Users/chisc/morsehub/winlib/mswu"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/gruiachiscop/morsehub/winlib/mswu/wx"
+					"path" : "C:/Users/chisc/morsehub/winlib/mswu/wx"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/gruiachiscop/morsehub/dep/wxInclude/msvc"
+					"path" : "C:/Users/chisc/morsehub/dep/wxInclude/msvc"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/gruiachiscop/morsehub/dep/wxInclude/msvc/wx"
+					"path" : "C:/Users/chisc/morsehub/dep/wxInclude/msvc/wx"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "C:/Users/gruiachiscop/morsehub/dep"
+					"path" : "C:/Users/chisc/morsehub/dep"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "C:/Users/gruiachiscop/morsehub/dep/wxInclude"
+					"path" : "C:/Users/chisc/morsehub/dep/wxInclude"
 				}
 			],
 			"language" : "CXX",
@@ -133,7 +133,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /O1 /Ob1 /DNDEBUG -MD"
+					"fragment" : "/DWIN32 /D_WINDOWS /Zi /O2 /Ob1 /DNDEBUG -MD"
 				}
 			],
 			"defines" : 
@@ -147,27 +147,27 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/gruiachiscop/morsehub/winlib/mswu"
+					"path" : "C:/Users/chisc/morsehub/winlib/mswu"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/gruiachiscop/morsehub/winlib/mswu/wx"
+					"path" : "C:/Users/chisc/morsehub/winlib/mswu/wx"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/gruiachiscop/morsehub/dep/wxInclude/msvc"
+					"path" : "C:/Users/chisc/morsehub/dep/wxInclude/msvc"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/gruiachiscop/morsehub/dep/wxInclude/msvc/wx"
+					"path" : "C:/Users/chisc/morsehub/dep/wxInclude/msvc/wx"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "C:/Users/gruiachiscop/morsehub/dep"
+					"path" : "C:/Users/chisc/morsehub/dep"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "C:/Users/gruiachiscop/morsehub/dep/wxInclude"
+					"path" : "C:/Users/chisc/morsehub/dep/wxInclude"
 				}
 			],
 			"language" : "C",
@@ -190,16 +190,16 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zc:inline /EHsc /MT /Z7 /O1 /Ob1 /DNDEBUG -MD",
+				"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zc:inline /EHsc /MT /Z7 /Zi /O2 /Ob1 /DNDEBUG -MD",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:ARM64 /INCREMENTAL:NO /subsystem:console",
+				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-LIBPATH:C:\\Users\\gruiachiscop\\morsehub\\winlib",
+				"fragment" : "-LIBPATH:C:\\Users\\chisc\\morsehub\\winlib",
 				"role" : "libraryPath"
 			},
 			{
