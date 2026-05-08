@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "Curl/curl.h"
+#include "curl/curl.h"
 // this class will hold the logic for any update, including application or callsign databases
 
     class MorseHubUpdater

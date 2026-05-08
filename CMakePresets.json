@@ -1,0 +1,71 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "MORSEHUB_BUILD_APP": "ON",
+        "MORSEHUB_BUILD_TESTS": "ON"
+      }
+    },
+    {
+      "name": "vcpkg-base",
+      "hidden": true,
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_FEATURE_FLAGS": "manifests"
+      }
+    },
+    {
+      "name": "vs2022-vcpkg",
+      "displayName": "Visual Studio 2022 + vcpkg",
+      "description": "Configure MorseHub with the Visual Studio generator and the vcpkg manifest.",
+      "inherits": "vcpkg-base",
+      "generator": "Visual Studio 17 2022",
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      }
+    },
+    {
+      "name": "vs2022-vcpkg-core",
+      "displayName": "Visual Studio 2022 + vcpkg (tests only)",
+      "description": "Configure the testable core without the GUI executable.",
+      "inherits": "vs2022-vcpkg",
+      "cacheVariables": {
+        "MORSEHUB_BUILD_APP": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "build-vs2022-vcpkg",
+      "configurePreset": "vs2022-vcpkg",
+      "configuration": "Debug"
+    },
+    {
+      "name": "build-vs2022-vcpkg-core",
+      "configurePreset": "vs2022-vcpkg-core",
+      "configuration": "Debug"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "test-vs2022-vcpkg-core",
+      "configurePreset": "vs2022-vcpkg-core",
+      "configuration": "Debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}

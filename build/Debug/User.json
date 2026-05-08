@@ -1,0 +1,56 @@
+{
+    "callsign": "none",
+    "dateOfBirth": "2026-05-08",
+    "defaultPitch": 440,
+    "defaultSpeed": 20,
+    "lastSelectedMode": 3,
+    "moduleSettings": {
+        "reception": {
+            "allowedSymbols": "abcdefghijklmnopqrstuvwxyz1234567890.,/?=+",
+            "fixedSpeed": true,
+            "groupLength": 5,
+            "groupSeparator": ";",
+            "pauseSeconds": 60,
+            "pitch": 500,
+            "resultEntryMinutes": 30,
+            "signalType": 2,
+            "speed": 20,
+            "speeds": [
+                60,
+                80,
+                100
+            ],
+            "transmissionSeconds": 60,
+            "useInternalInput": false
+        },
+        "rufz": {
+            "allowRepeat": true,
+            "maxRounds": 50,
+            "minSpeedCpm": 20,
+            "speedStepCpm": 10,
+            "trainer": {
+                "adaptiveStep": 5,
+                "allowedSymbols": "abcdefghijklmnopqrstuvwxyz1234567890.,/?=+",
+                "fixedSpeed": true,
+                "groupLength": 5,
+                "minSpeed": 10,
+                "speed": 20
+            }
+        },
+        "runner": {
+            "competitionMinutes": 15,
+            "enableFlutter": true,
+            "enableLids": true,
+            "enableQrm": true,
+            "enableQrn": true,
+            "enableQsb": true,
+            "initialSpeed": 20,
+            "mode": 2
+        }
+    },
+    "name": "Gruia",
+    "outputVolumePercent": 50,
+    "preferredOutputDeviceIndex": -1,
+    "signalType": 0,
+    "speedDisplayMode": 0
+}

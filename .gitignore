@@ -34,5 +34,9 @@
 winlib/
 .vs/
 .vscode./
+.codex-vcpkg-build/
+vcpkg_installed/
+out/
+build/**/*.pdb
 #other files
 .sconsign.dblite

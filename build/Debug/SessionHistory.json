@@ -1,0 +1,190 @@
+[
+    {
+        "maxSpeed": 120,
+        "mode": "runner",
+        "repeatCount": 0,
+        "results": [],
+        "rounds": 0,
+        "startedAt": "2026-05-08 18:26:51",
+        "totalErrors": 0,
+        "totalPoints": 0
+    },
+    {
+        "maxSpeed": 50,
+        "mode": "runner",
+        "repeatCount": 0,
+        "results": [
+            {
+                "elapsedMilliseconds": 2447,
+                "errorCount": 1,
+                "frequency": 440,
+                "id": 0,
+                "points": 0,
+                "possiblePoints": 47,
+                "runnerEnteredCall": "",
+                "runnerEnteredNr": "",
+                "runnerEnteredRst": "",
+                "runnerResponseText": "",
+                "runnerResultKind": 0,
+                "runnerRetransmittedText": "",
+                "runnerSentText": "",
+                "runnerStateText": "",
+                "signalType": 0,
+                "speed": 47,
+                "text": "XUF7U",
+                "typedText": "",
+                "usedRepeat": false
+            }
+        ],
+        "rounds": 1,
+        "startedAt": "2026-05-08 18:27:19",
+        "totalErrors": 1,
+        "totalPoints": 0
+    },
+    {
+        "maxSpeed": 20,
+        "mode": "rufz",
+        "repeatCount": 0,
+        "results": [],
+        "rounds": 0,
+        "startedAt": "2026-05-08 20:01:06",
+        "totalErrors": 0,
+        "totalPoints": 0
+    },
+    {
+        "maxSpeed": 20,
+        "mode": "rufz",
+        "repeatCount": 0,
+        "results": [
+            {
+                "elapsedMilliseconds": 221,
+                "errorCount": 5,
+                "frequency": 904,
+                "id": 0,
+                "points": 0,
+                "possiblePoints": 210,
+                "runnerEnteredCall": "",
+                "runnerEnteredNr": "",
+                "runnerEnteredRst": "",
+                "runnerResponseText": "",
+                "runnerResultKind": 0,
+                "runnerRetransmittedText": "",
+                "runnerSentText": "",
+                "runnerStateText": "",
+                "signalType": 1,
+                "speed": 20,
+                "text": "?RR/D",
+                "typedText": "",
+                "usedRepeat": false
+            }
+        ],
+        "rounds": 1,
+        "startedAt": "2026-05-08 20:08:15",
+        "totalErrors": 5,
+        "totalPoints": 0
+    },
+    {
+        "maxSpeed": 20,
+        "mode": "rufz",
+        "repeatCount": 0,
+        "results": [
+            {
+                "elapsedMilliseconds": 148,
+                "errorCount": 5,
+                "frequency": 762,
+                "id": 0,
+                "points": 0,
+                "possiblePoints": 210,
+                "runnerEnteredCall": "",
+                "runnerEnteredNr": "",
+                "runnerEnteredRst": "",
+                "runnerResponseText": "",
+                "runnerResultKind": 0,
+                "runnerRetransmittedText": "",
+                "runnerSentText": "",
+                "runnerStateText": "",
+                "signalType": 1,
+                "speed": 20,
+                "text": "?W584",
+                "typedText": "",
+                "usedRepeat": false
+            }
+        ],
+        "rounds": 1,
+        "startedAt": "2026-05-08 20:47:04",
+        "totalErrors": 5,
+        "totalPoints": 0
+    },
+    {
+        "maxSpeed": 20,
+        "mode": "runner",
+        "repeatCount": 0,
+        "results": [],
+        "rounds": 0,
+        "startedAt": "2026-05-08 21:34:21",
+        "totalErrors": 0,
+        "totalPoints": 0
+    },
+    {
+        "maxSpeed": 20,
+        "mode": "runner",
+        "repeatCount": 0,
+        "results": [],
+        "rounds": 0,
+        "startedAt": "2026-05-08 21:41:41",
+        "totalErrors": 0,
+        "totalPoints": 0
+    },
+    {
+        "maxSpeed": 20,
+        "mode": "runner",
+        "repeatCount": 0,
+        "results": [],
+        "rounds": 0,
+        "startedAt": "2026-05-08 21:47:52",
+        "totalErrors": 0,
+        "totalPoints": 0
+    },
+    {
+        "maxSpeed": 40,
+        "mode": "runner",
+        "repeatCount": 0,
+        "results": [
+            {
+                "elapsedMilliseconds": 7044,
+                "errorCount": 1,
+                "frequency": 440,
+                "id": 0,
+                "points": 0,
+                "possiblePoints": 40,
+                "runnerEnteredCall": "",
+                "runnerEnteredNr": "",
+                "runnerEnteredRst": "599",
+                "runnerResponseText": "NIL",
+                "runnerResultKind": 5,
+                "runnerRetransmittedText": "",
+                "runnerSentText": "",
+                "runnerStateText": "Timed out",
+                "signalType": 0,
+                "speed": 40,
+                "text": "VG0E0",
+                "typedText": "",
+                "usedRepeat": false
+            }
+        ],
+        "rounds": 1,
+        "startedAt": "2026-05-08 21:52:33",
+        "totalErrors": 1,
+        "totalPoints": 0
+    },
+    {
+        "maxSpeed": 20,
+        "mode": "runner",
+        "repeatCount": 0,
+        "results": [],
+        "rounds": 0,
+        "startedAt": "2026-05-08 22:09:03",
+        "totalErrors": 0,
+        "totalPoints": 0
+    }
+]

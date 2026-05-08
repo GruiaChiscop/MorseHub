@@ -9,3 +9,32 @@ A third reason is that these programs are not operating cross platform. I think 
 # Future plans:
 As this app was originally built in C#, currently I'm trying to port it to C++ to make it cross platform. Firstly, I need to port the morse library I created in C# with [NAudio](https://github.com/naudio/NAudio) and then write a cross platform build system with [SCons](https://github.com/SCons/scons).
 Then, to make this app a legit one, I need to contact the authors of RufzXP to get the algorithm they used to calculate the scores. After this is done, this app will be ready for HST competitions.
+
+## Build with CMake and vcpkg
+
+The C++ project now supports a `vcpkg` manifest and CMake presets.
+
+1. Install `vcpkg` and set the `VCPKG_ROOT` environment variable.
+2. Configure the full desktop app:
+
+```powershell
+cmake --preset vs2022-vcpkg
+```
+
+3. Build it:
+
+```powershell
+cmake --build --preset build-vs2022-vcpkg
+```
+
+If you want to work only on the scoring/core layer and tests, configure the lighter preset:
+
+```powershell
+cmake --preset vs2022-vcpkg-core
+cmake --build --preset build-vs2022-vcpkg-core
+ctest --preset test-vs2022-vcpkg-core
+```
+
+The `networking` dependencies (`curl`, `poco`, `sqlite3`) are kept as an optional `vcpkg` feature because the HTTP/updater code is not part of the active build yet.
+
+The provided build presets target the `Debug` configuration on Visual Studio.

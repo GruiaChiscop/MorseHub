@@ -7,11 +7,10 @@
 #include <filesystem>
 #include <cstdlib>
 #include <random>
+#include <cmath>
 #ifdef _WIN32
 #include <Windows.h>
 #endif
-#include "Poco/String.h"
-#include "Poco/UnicodeConverter.h"
 
 using namespace std;
 namespace Utils
@@ -66,15 +65,56 @@ namespace Utils
 
     long long randomInteger(long long min, long long max)
     {
-        return -1;
+        if (max <= min)
+            return min;
+
+        static std::mt19937_64 rng{std::random_device{}()};
+        std::uniform_int_distribution<long long> distribution(min, max - 1);
+        return distribution(rng);
+    }
+
+    int speedToDisplayUnits(int cpm, SpeedDisplayMode mode)
+    {
+        if (mode == SpeedDisplayMode::Wpm)
+            return static_cast<int>(std::lround(static_cast<double>(cpm) / 5.0));
+        return cpm;
+    }
+
+    int displayUnitsToCpm(int value, SpeedDisplayMode mode)
+    {
+        if (mode == SpeedDisplayMode::Wpm)
+            return value * 5;
+        return value;
+    }
+
+    wxString speedUnitLabel(SpeedDisplayMode mode)
+    {
+        return mode == SpeedDisplayMode::Wpm ? "WPM" : "CPM";
+    }
+
+    wxString formatSpeed(int cpm, SpeedDisplayMode mode, bool includeUnit)
+    {
+        const int value = speedToDisplayUnits(cpm, mode);
+        if (includeUnit)
+            return wxString::Format("%d %s", value, speedUnitLabel(mode));
+        return wxString::Format("%d", value);
     }
 
     void say(const string &text, bool wait)
     {
+        if (!morseGenerator)
+            return;
         if (wait)
             morseGenerator->transmit(text);
         else
             morseGenerator->transmitAsync(text);
+    }
+    void configureGlobalMorseGenerator(const User& user)
+    {
+        const auto outputDevice = user.preferredOutputDeviceIndex >= 0
+            ? std::optional<AudioOutputDevice>(AudioOutputDeviceService::resolvePlaybackDevice(user.preferredOutputDeviceIndex))
+            : std::nullopt;
+        morseGenerator = std::make_unique<MorseGenerator>(user.defaultSpeed, user.defaultPitch, user.signalType, outputDevice);
     }
     string getAppData()
     {

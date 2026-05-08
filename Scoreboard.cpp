@@ -1,5 +1,5 @@
 #include "Result.h"
-#include "ScoreBoard.h"
+#include "Scoreboard.h"
 #include <sqlite3/sqlite3.h>
 #include "Poco/String.h"
 #include "Poco/NumberParser.h"

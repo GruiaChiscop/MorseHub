@@ -18,6 +18,7 @@ const float a = 0.5;
 const double pi = 3.14159265358979323846;
 SType type;
 std::vector<float> buffer;
+double phase = 0.0;
 public:
 float frequency;
 int sampleRate;
@@ -32,27 +33,26 @@ void add(float duration, std::vector<float>& buffer);
 void addSilence(float duration, std::vector<float>& buffer);
 std::vector<float>& getBuffer() { return buffer; }
 void reset();
+void advancePhase(size_t samples);
+size_t envelopeSamples(size_t totalSamples) const;
+void smoothEdges(std::vector<float>& buffer) const;
 
-double sineWave(int sampleIndex) {
-    double t = static_cast<double>(sampleIndex)/sampleRate;
-    return a*std::sin(2.0*pi*frequency*t);
+double sineWave() const {
+    return a*std::sin(phase);
 }
-double squareWave(int sampleIndex) {
-    double t = static_cast<double>(sampleIndex)/sampleRate;
-    return a*(std::sin(2.0*pi*frequency*t)>=0.0?1.0:-1.0);
+double squareWave() const {
+    return a*(std::sin(phase)>=0.0?1.0:-1.0);
 }
-double triangleWave(int sampleIndex) {
-    double t = static_cast<double>(sampleIndex) / sampleRate; // Time step based on sample index
-    double phase = frequency * t;                            // Compute phase
-    double fractionalPart = phase - std::floor(phase);       // Fractional part of phase
-    double triangle = 2.0 * std::abs(2.0 * fractionalPart - 1.0) - 1.0; // Triangle wave calculation
+double triangleWave() const {
+    double cyclePhase = phase / (2.0 * pi);
+    double fractionalPart = cyclePhase - std::floor(cyclePhase);
+    double triangle = 2.0 * std::abs(2.0 * fractionalPart - 1.0) - 1.0;
     return a * triangle;                                     // Scale by amplitude
 }
-double sawtoothWave(int sampleIndex) {
-    double t = static_cast<double>(sampleIndex) / sampleRate; // Time step based on sample index
-    double phase = frequency * t;                            // Compute phase
-    double fractionalPart = phase - std::floor(phase);       // Fractional part of phase
-    double sawtooth = 2.0 * fractionalPart - 1.0;            // Sawtooth wave calculation
+double sawtoothWave() const {
+    double cyclePhase = phase / (2.0 * pi);
+    double fractionalPart = cyclePhase - std::floor(cyclePhase);
+    double sawtooth = 2.0 * fractionalPart - 1.0;
     return a * sawtooth;                                     // Scale by amplitude
 }
 

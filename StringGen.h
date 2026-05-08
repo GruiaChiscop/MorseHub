@@ -1,15 +1,27 @@
-/*StringGen.h: The class that is responsible for string generation*/
+/* StringGen.h: group generation for trainer-style character sets. */
 #ifndef STRINGGEN_H
 #define STRINGGEN_H
+
 #include <string>
-#include <sstream>
+
+enum class GroupCharsetMode
+{
+    Letters,
+    Digits,
+    LettersDigits,
+    LettersDigitsPunctuation
+};
+
 class StringGen
 {
-    const std::string chars="abcdefghijklmnopqrstuvwxyz1234567890.,/?=+";
-     public:
-     std::string generate(int num);
-     std::string generateonlyLetters(int num);
-     std::string generateOnlyDigits(int num);
+public:
+    std::string generate(int length, GroupCharsetMode mode = GroupCharsetMode::LettersDigitsPunctuation) const;
+    std::string generateFromCharset(int length, const std::string& charset) const;
+    std::string generateOnlyLetters(int length) const;
+    std::string generateOnlyDigits(int length) const;
+    std::string generateLettersAndDigits(int length) const;
 
+    static const std::string& charsetForMode(GroupCharsetMode mode);
 };
+
 #endif

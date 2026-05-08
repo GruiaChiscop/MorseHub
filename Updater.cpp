@@ -1,7 +1,7 @@
 #include "Updater.h"
 #include <sstream>
 #include "Poco/JSON/Parser.h"
-#include "Poco/Json/Object.h"
+#include "Poco/JSON/Object.h"
 #include <string>
 #include <fstream>
 MorseHubUpdater::MorseHubUpdater(const std::string& mirror):m_mirror{mirror}

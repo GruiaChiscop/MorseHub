@@ -2,7 +2,7 @@
 #include <string>
 #include "HTTP.h"
 #define THREAD_IMPLEMENTATION
-#include "Thread.h"
+#include "thread.h"
 // callbacks for CURL
 
 static size_t HTTPRequest_write_callback(void *ptr, size_t size, size_t nmemb, std::string *data)
